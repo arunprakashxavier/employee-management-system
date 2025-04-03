@@ -1,0 +1,83 @@
+# Git Ignore file for Java/Spring Boot/Maven project
+
+# Compiled class file
+*.class
+
+# Log files
+*.log
+logs/
+
+# Package Files (JARs created during build, etc.)
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven Build Output Directory
+target/
+
+# Maven Wrapper - DO NOT IGNORE the wrapper jar file
+!.mvn/wrapper/maven-wrapper.jar
+
+# Maven temporary files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Java Virtual Machine crash logs
+hs_err_pid*
+
+# Your specific file
+HELP.md
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+# Covers *.iml, *.ipr, *.iws, .idea folder
+.idea/
+*.iml
+*.ipr
+*.iws
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+# Add exclusions for src directories if needed, but often covered by top-level ignores
+# !**/src/main/**/build/
+# !**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Other misc temp/swap files
+*~
+*.swp
+
+# IMPORTANT: Secrets / Configuration
+# Avoid committing sensitive configuration like database passwords.
+# Use environment variables, Spring profiles, or external config management.
+# If application.properties contains secrets, uncomment the line below AFTER
+# removing the secrets from the file, or use a different properties file
+# that IS ignored (e.g., application-local.properties).
+#
+# application.properties
+# application-*.properties

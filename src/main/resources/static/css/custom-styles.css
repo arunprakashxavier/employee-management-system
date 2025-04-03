@@ -1,0 +1,247 @@
+/* src/main/resources/static/css/custom-styles.css */
+
+body {
+    padding-top: 0;
+    background-color: #e9ecef; /* Fallback color */
+    padding-bottom: 50px;
+
+    /* --- Background Image Styles --- */
+    background-image: url('/images/background.jpg'); /* Path relative to static root */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    /* --- End Background Image Styles --- */
+
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* Override Bootstrap header */
+.header-bar {
+    background-color: #343a40; /* Darker header */
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.header-bar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Updated: Make the outer box translucent */
+.content-wrapper {
+    background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    backdrop-filter: blur(10px); /* Adds a slight blur effect */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+/* --- List Page Specific --- */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.list-header h3 {
+    margin: 0 1rem 0.5rem 0;
+    flex-shrink: 0;
+}
+.list-header .btn {
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+}
+
+.filter-form {
+    background-color: #f8f9fa;
+    padding: 1rem 1.5rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #dee2e6;
+}
+.filter-form .form-control, .filter-form .btn {
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+}
+
+/* Table styles */
+.table {
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    border: 1px solid #dee2e6;
+}
+.table th, .table td {
+    vertical-align: middle;
+    padding: 0.9rem 0.75rem;
+}
+.table thead th {
+    font-weight: 600;
+}
+/* Styles for the dark table header */
+.table thead.table-dark th {
+    background-color: #495057;
+    color: #ffffff !important;
+    border-color: #6c757d;
+}
+/* Target links within the dark header specifically */
+.table thead.table-dark th a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+.table thead.table-dark th a:hover {
+    color: #e9ecef !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+.table td .btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+.table td .btn i {
+    margin-right: 3px;
+    vertical-align: text-bottom;
+}
+.table td .btn:last-child {
+    margin-right: 0;
+}
+
+/* Center pagination */
+nav[aria-label="Page navigation"] {
+    text-align: center;
+    margin-top: 2rem;
+}
+.pagination {
+    padding: 0;
+    border-radius: 0.375rem;
+    display: inline-flex;
+}
+.pagination .page-link {
+    color: #007bff;
+}
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+}
+
+/* --- Form/Details/Login Containers --- */
+.form-container, .details-container, .login-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 10px;
+}
+
+/* Style H2 inside containers */
+.form-container h2, .details-container h2, .login-container h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 300;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Style form labels inside containers */
+.form-container .form-label {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+/* Details list styling */
+.details-container dt,
+.details-container dd {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+/* Validation summary */
+.validation-summary {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.validation-summary p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.validation-summary ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+.validation-summary li {
+    margin-bottom: 0.25rem;
+}
+
+/* Inline errors */
+.error-message {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Add red border to invalid fields */
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+.form-select.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Login container specific */
+.login-container {
+    max-width: 450px;
+}
+
+/* Flash Messages */
+.alert {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--bs-alert-bg);
+    color: var(--bs-alert-color);
+    border-color: var(--bs-alert-border-color);
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+    filter: brightness(110%);
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.65);
+    transform: translateY(-1px);
+}
+.btn-danger:hover {
+    box-shadow: 0 0 10px 3px rgba(255, 180, 180, 0.7);
+}
+.btn-info:hover {
+    box-shadow: 0 0 10px 3px rgba(180, 220, 255, 0.7);
+}

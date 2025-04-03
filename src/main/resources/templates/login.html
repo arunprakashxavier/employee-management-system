@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Employee Management</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <style>
+        /* Center the page and apply background */
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            /* Apply background directly here if it's ONLY for the login */
+            /* Or rely on the body style in custom-styles.css if global */
+            background-image: url('/images/background.jpg'); /* Assuming global background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keep fixed from global style */
+            margin: 0;
+        }
+
+        /* Login Box with Glassmorphism Effect */
+        .login-container {
+            width: 380px; /* Adjusted width slightly */
+            padding: 40px 30px; /* Adjusted padding */
+            background: rgba(30, 30, 30, 0.15); /* Darker, more translucent */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Adjusted shadow */
+            border-radius: 15px;
+            backdrop-filter: blur(15px); /* Increased blur */
+            -webkit-backdrop-filter: blur(15px); /* Safari support */
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Soft border */
+            overflow: hidden; /* Hide overflowing pseudo-elements */
+        }
+
+        /* Optional: Subtle gradient border effect */
+        /* .login-container::before { ... (keep if desired) ... } */
+
+        /* Login Title */
+        .login-container h2 {
+            color: #f8f9fa; /* Lighter white */
+            font-weight: 300; /* Lighter font weight */
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 1px; /* Added letter spacing */
+        }
+
+        /* Labels */
+        .form-label {
+            color: rgba(255, 255, 255, 0.8); /* Slightly translucent white label */
+            font-size: 0.9rem;
+        }
+
+
+        /* Input fields */
+        .form-control {
+            background: rgba(255, 255, 255, 0.15); /* Slightly more visible input background */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Soft border */
+            color: white; /* White input text */
+            border-radius: 8px; /* Rounded inputs */
+        }
+        .form-control::placeholder { /* Style placeholder text */
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.25); /* Slightly lighter on focus */
+            color: white;
+            border-color: rgba(255, 255, 255, 0.5); /* Highlight border on focus */
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); /* Subtle focus glow */
+        }
+
+        /* Login Button */
+        .btn-primary {
+            background: #0d6efd; /* Standard Bootstrap blue */
+            border: none;
+            transition: all 0.3s ease;
+            padding: 10px; /* Adjust padding */
+            font-weight: 500;
+            border-radius: 8px;
+            /* box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.3); /* Softer shadow */
+        }
+
+        .btn-primary:hover {
+            background: #0b5ed7; /* Darker blue on hover */
+            /* box-shadow: 0px 6px 20px rgba(0, 123, 255, 0.4); */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        /* Alert messages */
+        .alert {
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            background-color: rgba(248, 215, 218, 0.9); /* Semi-transparent alert background */
+            border-color: rgba(245, 198, 203, 0.9);
+            color: #721c24;
+        }
+        .alert-success {
+            background-color: rgba(212, 237, 218, 0.9);
+            border-color: rgba(197, 229, 206, 0.9);
+            color: #155724;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Employee Management Login</h2>
+
+    <div th:if="${param.error}" class="alert alert-danger" role="alert">
+        Invalid username or password.
+    </div>
+
+    <div th:if="${param.logout}" class="alert alert-success" role="alert">
+        You have been logged out.
+    </div>
+
+    <form th:action="@{/login}" method="post" class="mt-4">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required autofocus placeholder="Enter username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required placeholder="Enter password">
+        </div>
+        <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
